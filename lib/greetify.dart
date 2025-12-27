@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 class Greetify extends StatelessWidget {
-  /// The user's name to display (optional).
+  /// The user's name to display.
   final String? name;
 
   /// Custom text style for the greeting.
@@ -15,7 +15,6 @@ class Greetify extends StatelessWidget {
   /// If false, always picks the first item in the list.
   final bool randomize;
 
-  // Optional custom lists for users to override defaults
   final List<String>? customMorningMessages;
   final List<String>? customAfternoonMessages;
   final List<String>? customEveningMessages;
@@ -26,49 +25,45 @@ class Greetify extends StatelessWidget {
     this.name,
     this.style,
     this.showIcon = false,
-    this.randomize = false, // Defaults to false (standard greeting)
+    this.randomize = false,
     this.customMorningMessages,
     this.customAfternoonMessages,
     this.customEveningMessages,
     this.customNightMessages,
   });
 
-  // --- INTERNAL DEFAULTS ---
-  // We keep "Standard" messages at Index 0 so they are used when randomize is false.
+  //INTERNAL DEFAULTS
   static const List<String> _defaultMorning = [
-    "Good Morning", // Index 0 (Default)
+    "Good Morning",
     "Rise and Shine",
     "Have a great morning",
-    "Top of the morning",
+    "Hope your day is bright",
   ];
 
   static const List<String> _defaultAfternoon = [
-    "Good Afternoon", // Index 0 (Default)
+    "Good Afternoon",
     "Hope your day is going well",
-    "Stay productive",
+    "Welcome back",
     "Good day",
   ];
 
   static const List<String> _defaultEvening = [
-    "Good Evening", // Index 0 (Default)
+    "Good Evening",
     "Hope you had a good day",
     "Time to relax",
     "Good evening to you",
   ];
 
   static const List<String> _defaultNight = [
-    "Good Night", // Index 0 (Default)
+    "Good Night",
     "Sweet dreams",
-    "Rest well",
+    "Have a restful night",
     "See you tomorrow",
   ];
-
-  // --- LOGIC ---
 
   String _getGreetingMessage(int hour) {
     List<String> selectedList;
 
-    // 1. Determine Time Period and Select List (Custom or Default)
     if (hour >= 5 && hour < 12) {
       selectedList = customMorningMessages ?? _defaultMorning;
     } else if (hour >= 12 && hour < 17) {
@@ -82,11 +77,9 @@ class Greetify extends StatelessWidget {
     // 2. Handle Empty List Edge Case
     if (selectedList.isEmpty) return "Hello";
 
-    // 3. Pick the string based on 'randomize' flag
     if (randomize) {
       return selectedList[Random().nextInt(selectedList.length)];
     } else {
-      // If randomization is off, always use the first greeting (Standard)
       return selectedList.first;
     }
   }
@@ -116,8 +109,7 @@ class Greetify extends StatelessWidget {
         ],
         Text(
           fullText,
-          style:
-              style ??
+          style: style ??
               const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
       ],

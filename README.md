@@ -38,7 +38,7 @@ import 'package:greetify/greetify.dart';
 
 ### 1. Basic Usage
 
-The simplest implementation checks the time and displays a standard greeting (e.g., "Good Morning") with a default icon.
+The simplest implementation checks the time and displays a standard greeting (e.g., "Good Morning").
 
 ```dart
 Greetify(
@@ -69,7 +69,7 @@ By default, the package shows a static standard greeting. To cycle through diffe
 ```dart
 Greetify(
   name: "Alex",
-  randomize: true, // Enables random selection from the available lists
+  randomize: true,
 )
 ```
 
@@ -99,7 +99,7 @@ Greetify(
 |-------------------------|----------------|---------|-----------------------------------------------------------------------------|
 | `name`                  | `String?`      | `null`  | The name of the user to append to the greeting (e.g., "Good Morning, [Name]"). |
 | `style`                 | `TextStyle?`   | `null`  | The text style for the greeting message.                                    |
-| `showIcon`              | `bool`         | `true`  | Determines whether to display the time-based icon (Sun/Moon).               |
+| `showIcon`              | `bool`         | `false` | Determines whether to display the time-based icon (Sun/Moon).               |
 | `randomize`             | `bool`         | `false` | If true, selects a random message from the available list. If false, selects the first message. |
 | `customMorningMessages` | `List<String>?`| `null`  | A custom list of strings to use between 5:00 AM and 12:00 PM.               |
 | `customAfternoonMessages`| `List<String>?`| `null`  | A custom list of strings to use between 12:00 PM and 5:00 PM.               |
