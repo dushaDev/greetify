@@ -1,3 +1,6 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Initial release of Greetify.
+* Added time-based greetings logic.
+* Added randomization feature.
+* Added customization for message lists.
