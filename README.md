@@ -5,7 +5,7 @@ Greetify is a flexible and lightweight Flutter package that provides dynamic, ti
 
 This package is ideal for dashboard headers, welcome screens, and home pages where a personalized user experience is required.
 <div align="center">
- <img src="screenshots/demo_1.png" width="200">
+ <img src="https://github.com/dushaDev/greetify/blob/dev/screenshots/demo_1.png?raw=true" width="200">
   <br>
   <i>Check out the interactive dashboard example</i>
 </div>
