@@ -20,6 +20,18 @@ class Greetify extends StatelessWidget {
   final List<String>? customEveningMessages;
   final List<String>? customNightMessages;
 
+  /// Callback to be executed when the greeting is tapped.
+  final VoidCallback? onTap;
+
+  final Color? splashColor;
+  final Color? hoverColor;
+
+  /// Callback to be executed when the greeting is hovered.
+  final Function(bool?)? onHover;
+
+  /// Callback to be executed when the greeting is long-pressed.
+  final VoidCallback? onLongPress;
+
   const Greetify({
     super.key,
     this.name,
@@ -30,6 +42,11 @@ class Greetify extends StatelessWidget {
     this.customAfternoonMessages,
     this.customEveningMessages,
     this.customNightMessages,
+    this.onTap,
+    this.onHover,
+    this.onLongPress,
+    this.splashColor,
+    this.hoverColor,
   });
 
   //INTERNAL DEFAULTS
@@ -100,19 +117,33 @@ class Greetify extends StatelessWidget {
     final String message = _getGreetingMessage(hour);
     final String fullText = name != null ? "$message, $name" : message;
 
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        if (showIcon) ...[
-          Icon(_getIcon(hour), color: Colors.orangeAccent),
-          const SizedBox(width: 8),
-        ],
-        Text(
-          fullText,
-          style: style ??
-              const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        splashColor: splashColor,
+        hoverColor: hoverColor,
+        onTap: onTap,
+        onHover: onHover,
+        onLongPress: onLongPress,
+        borderRadius: BorderRadius.circular(8),
+        child: Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (showIcon) ...[
+                Icon(_getIcon(hour), color: Colors.orangeAccent),
+                const SizedBox(width: 8),
+              ],
+              Text(
+                fullText,
+                style: style ??
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
         ),
-      ],
+      ),
     );
   }
 }

@@ -1,3 +1,10 @@
+## 0.0.2
+
+* Added `onTap`, `onHover`, and `onLongPress` callbacks for interactive greetings.
+* Added `splashColor` and `hoverColor` properties for customizing touch feedback colors.
+* Improved UI touch feedback with InkWell.
+
+
 ## 0.0.1
 
 * Initial release of Greetify.

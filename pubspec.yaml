@@ -1,6 +1,6 @@
 name: greetify
 description: A simple Flutter package to show time-based greetings with customization and randomization features.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/dushaDev/greetify
 
 environment:
