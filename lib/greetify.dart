@@ -11,6 +11,8 @@ class Greetify extends StatelessWidget {
   /// Whether to show the sun/moon icon.
   final bool showIcon;
 
+  final bool showIconRight;
+
   /// If true, picks a random greeting from the list.
   /// If false, always picks the first item in the list.
   final bool randomize;
@@ -37,6 +39,7 @@ class Greetify extends StatelessWidget {
     this.name,
     this.style,
     this.showIcon = false,
+    this.showIconRight = false,
     this.randomize = false,
     this.customMorningMessages,
     this.customAfternoonMessages,
@@ -129,6 +132,8 @@ class Greetify extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(2.0),
           child: Row(
+            textDirection:
+                showIconRight ? TextDirection.rtl : TextDirection.ltr,
             mainAxisSize: MainAxisSize.min,
             children: [
               if (showIcon) ...[

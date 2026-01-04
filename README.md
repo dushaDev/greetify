@@ -25,7 +25,7 @@ Add `greetify` as a dependency in your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  greetify: ^0.0.3
+  greetify: ^0.0.4
 
 
 Then, run the following command in your terminal:
@@ -122,6 +122,7 @@ Greetify(
 | `name`                    | `String?`           | `null`  | The name of the user to append to the greeting (e.g., "Good Morning, [Name]").                  |
 | `style`                   | `TextStyle?`        | `null`  | The text style for the greeting message.                                                        |
 | `showIcon`                | `bool`              | `false` | Determines whether to display the time-based icon (Sun/Moon).                                   |
+| `showIconRight`           | `bool`              | `false` | Determines whether to align the icon to the right or left for text (RTL).                       |
 | `randomize`               | `bool`              | `false` | If true, selects a random message from the available list. If false, selects the first message. |
 | `customMorningMessages`   | `List<String>?`     | `null`  | A custom list of strings to use between 5:00 AM and 12:00 PM.                                   |
 | `customAfternoonMessages` | `List<String>?`     | `null`  | A custom list of strings to use between 12:00 PM and 5:00 PM.                                   |
