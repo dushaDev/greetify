@@ -25,7 +25,7 @@ Add `greetify` as a dependency in your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  greetify: ^0.0.2
+  greetify: ^0.0.3
 
 
 Then, run the following command in your terminal:
