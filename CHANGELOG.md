@@ -1,3 +1,7 @@
+## 0.0.4
+* new Icon direction(left or right) change option added.
+
+
 ## 0.0.3
 * Added sample demo app.
 * Updated README with demo screenshots.
