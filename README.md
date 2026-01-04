@@ -11,6 +11,7 @@ This package is ideal for dashboard headers, welcome screens, and home pages whe
 - **Dynamic Icons:** Renders appropriate icons (sun or moon) alongside the text based on the time of day.
 - **Randomization:** Optional feature to cycle through a list of greetings to keep the UI fresh.
 - **Customization:** Full support for overriding default messages with custom lists for specific times of day.
+- **Interactive:** Supports tap callbacks with customizable splash and hover effects.
 - **Styling:** Accepts standard Flutter text styling to match your application's design system.
 
 ## Installation
@@ -19,7 +20,7 @@ Add `greetify` as a dependency in your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  greetify: ^0.0.1
+  greetify: ^0.0.2
 
 
 Then, run the following command in your terminal:
@@ -93,18 +94,40 @@ Greetify(
 )
 ```
 
+### 5. Interactive & Custom Colors
+
+You can handle tap events and customize the touch feedback colors (useful for matching app branding).
+
+```dart
+Greetify(
+  name: "Alex",
+  onTap: () {
+    print("Greeting clicked!");
+  },
+  // Customize the interaction colors
+  splashColor: Colors.blue.withOpacity(0.3),
+  hoverColor: Colors.grey.withOpacity(0.1),
+)
+```
+
 ## Configuration Parameters
 
-| Parameter               | Type           | Default | Description                                                                 |
-|-------------------------|----------------|---------|-----------------------------------------------------------------------------|
-| `name`                  | `String?`      | `null`  | The name of the user to append to the greeting (e.g., "Good Morning, [Name]"). |
-| `style`                 | `TextStyle?`   | `null`  | The text style for the greeting message.                                    |
-| `showIcon`              | `bool`         | `false` | Determines whether to display the time-based icon (Sun/Moon).               |
-| `randomize`             | `bool`         | `false` | If true, selects a random message from the available list. If false, selects the first message. |
-| `customMorningMessages` | `List<String>?`| `null`  | A custom list of strings to use between 5:00 AM and 12:00 PM.               |
-| `customAfternoonMessages`| `List<String>?`| `null`  | A custom list of strings to use between 12:00 PM and 5:00 PM.               |
-| `customEveningMessages` | `List<String>?`| `null`  | A custom list of strings to use between 5:00 PM and 9:00 PM.                |
-| `customNightMessages`   | `List<String>?`| `null`  | A custom list of strings to use between 9:00 PM and 5:00 AM.                |
+| Parameter                 | Type                | Default | Description                                                                                     |
+|---------------------------|---------------------|---------|-------------------------------------------------------------------------------------------------|
+| `name`                    | `String?`           | `null`  | The name of the user to append to the greeting (e.g., "Good Morning, [Name]").                  |
+| `style`                   | `TextStyle?`        | `null`  | The text style for the greeting message.                                                        |
+| `showIcon`                | `bool`              | `false` | Determines whether to display the time-based icon (Sun/Moon).                                   |
+| `randomize`               | `bool`              | `false` | If true, selects a random message from the available list. If false, selects the first message. |
+| `customMorningMessages`   | `List<String>?`     | `null`  | A custom list of strings to use between 5:00 AM and 12:00 PM.                                   |
+| `customAfternoonMessages` | `List<String>?`     | `null`  | A custom list of strings to use between 12:00 PM and 5:00 PM.                                   |
+| `customEveningMessages`   | `List<String>?`     | `null`  | A custom list of strings to use between 5:00 PM and 9:00 PM.                                    |
+| `customNightMessages`     | `List<String>?`     | `null`  | A custom list of strings to use between 9:00 PM and 5:00 AM.                                    |
+| `onTap`                   | `VoidCallback?`     | `null`  | Function to execute when the greeting is tapped.                                                |
+| `onHover`                 | `Function(bool?)?`  | `null`  | Function to execute when the mouse hovers over the widget.                                      |
+| `onLongPress`             | `VoidCallback?`     | `null`  | Function to execute when the widget is long-pressed.                                            |
+| `splashColor`             | `Color?`            | `null`  | The color of the splash effect when tapped.                                                     |
+| `hoverColor`              | `Color?`            | `null`  | The color when the mouse hovers over the widget (Web/Desktop).                                  |
+
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
