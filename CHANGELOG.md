@@ -1,3 +1,8 @@
+## 0.0.3
+* Added sample demo app.
+* Updated README with demo screenshots.
+
+
 ## 0.0.2
 
 * Added `onTap`, `onHover`, and `onLongPress` callbacks for interactive greetings.
