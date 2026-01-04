@@ -4,6 +4,11 @@
 Greetify is a flexible and lightweight Flutter package that provides dynamic, time-aware greetings for your application. It automatically detects the time of day to display appropriate messages (e.g., "Good Morning", "Good Evening") and includes features for randomization and custom message lists.
 
 This package is ideal for dashboard headers, welcome screens, and home pages where a personalized user experience is required.
+<div align="center">
+ <img src="screenshots/demo_1.png" width="200">
+  <br>
+  <i>Check out the interactive dashboard example</i>
+</div>
 
 ## Features
 
